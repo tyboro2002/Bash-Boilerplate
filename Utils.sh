@@ -75,5 +75,3 @@ shift $((OPTIND - 1))
 
 ## download "URL" "file"
 wget -qO- "URL" >"my_file.txt"
-
-u ma
