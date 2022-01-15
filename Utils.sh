@@ -9,12 +9,12 @@
 ## @param (1): de exit status
 function panic() {
   case $1 in
-    1) echo "ERR MSG 1" >&2
-       ;;
-    2) echo "ERR MSG 2" >&2
-       ;;
-    3) echo "ERR MSG 3" >&2
-       ;;
+    (1) echo "ERR MSG 1" >&2
+        ;;
+    (2) echo "ERR MSG 2" >&2
+        ;;
+    (3) echo "ERR MSG 3" >&2
+        ;;
   esac	
   exit $1
 }
