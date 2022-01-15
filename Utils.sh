@@ -74,4 +74,4 @@ shift $((OPTIND - 1))
 #######################
 
 ## download "URL" "file"
-wget -qO- $1 >$2
+wget -qO- "URL" >$2
