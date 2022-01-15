@@ -28,7 +28,11 @@ function panic() {
   exit $1
 }
 
-
+## check of het bestand ongewoon of onleesbaar is
+## @param (1): de naam van het bestand
+if [[ ! -f $1 ]] || [[ ! -r $1 ]]; then
+    # panic 1
+fi
 
 #######################
 ## OPTIES
@@ -50,7 +54,7 @@ while getopts ":a:b:cd" opt; do
         ;;
     (d) d_flag=1
 	;;
-    \?) panic 1
+    \?) # panic 1
         ;;
   esac
 done
