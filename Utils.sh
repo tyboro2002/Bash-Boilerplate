@@ -44,7 +44,7 @@ fi
 ## we lezen hier $1 binnen en als die niet bestaat, stdin
 file=${1:--}
 if ! [ -z "$1" -o -f "$1" -a -r "$1" ]; then
-    >&2 echo "error: input unreadable; exit 1
+    >&2 echo "error: input unreadable"; exit 1
 fi
 
 
