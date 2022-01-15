@@ -1,4 +1,3 @@
-
 #######################
 ## ERRORS & CHECKING
 #######################
@@ -40,6 +39,8 @@ fi
 ## check of het nummer een natuurlijk getal is (eventueel met leading zero)
 [[ "01" =~ ^[0-9]+$ ]] || echo "NaN"
 
+
+
 #######################
 ## OPTIES
 #######################
@@ -65,3 +66,12 @@ while getopts ":a:b:cd" opt; do
   esac
 done
 shift $((OPTIND - 1))
+
+
+
+#######################
+## RANDOM
+#######################
+
+## download "URL" "file"
+wget -qO- $1 >$2
