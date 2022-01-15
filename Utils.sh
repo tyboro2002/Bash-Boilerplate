@@ -40,6 +40,13 @@ fi
 [[ "01" =~ ^[0-9]+$ ]] || echo "NaN"
 
 
+## leesbaarheid-detectie voor wanneer je moet kunnen inlezen van bestandsnaam-argument en stdin
+## we lezen hier $1 binnen en als die niet bestaat, stdin
+file=${1:--}
+if ! [ -z "$1" -o -f "$1" -a -r "$1" ]; then
+    >&2 echo "error: input unreadable; exit 1
+fi
+
 
 #######################
 ## OPTIES
