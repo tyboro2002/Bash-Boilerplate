@@ -30,7 +30,7 @@ function panic() {
 ## check of het bestand ongewoon of onleesbaar is
 ## @param (1): de naam van het bestand
 if [[ ! -f $1 ]] || [[ ! -r $1 ]]; then
-    # panic 1
+  # panic 1
 fi
 
 ## check of het nummer een strikt positief natuurlijk getal is zonder leading zero
@@ -39,12 +39,17 @@ fi
 ## check of het nummer een natuurlijk getal is (eventueel met leading zero)
 [[ "01" =~ ^[0-9]+$ ]] || echo "NaN"
 
+## check of het aantal argumenten juist is
+if [[ $# -ne $aantal ]]; then
+  # panic 1
+fi
+
 
 ## leesbaarheid-detectie voor wanneer je moet kunnen inlezen van bestandsnaam-argument en stdin
 ## we lezen hier $1 binnen en als die niet bestaat, stdin
 file=${1:--}
 if ! [ -z "$1" -o -f "$1" -a -r "$1" ]; then
-    >&2 echo "error: input unreadable"; exit 1
+  >&2 echo "error: input unreadable"; exit 1
 fi
 
 
