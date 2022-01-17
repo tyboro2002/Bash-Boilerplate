@@ -34,10 +34,10 @@ if [[ ! -f $1 ]] || [[ ! -r $1 ]]; then
 fi
 
 ## check of het nummer een strikt positief natuurlijk getal is zonder leading zero
-[[ "01" =~ ^[1-9][0-9]*$ ]] || echo "NaN"
+[[ "01" =~ ^[1-9][0-9]*$ ]] || # panic 1
 
 ## check of het nummer een natuurlijk getal is (eventueel met leading zero)
-[[ "01" =~ ^[0-9]+$ ]] || echo "NaN"
+[[ "01" =~ ^[0-9]+$ ]] || # panic 1
 
 ## check of het aantal argumenten juist is
 if [[ $# -ne $aantal ]]; then
