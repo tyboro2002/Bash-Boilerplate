@@ -85,5 +85,12 @@ shift $((OPTIND - 1))
 ## RANDOM
 #######################
 
+## een bestand lijn per lijn uitlezen en daarop de nodige bewerkingen uitvoeren
+while read p
+do
+	## code hier
+	## met p als var om de huide lijn te lezen
+done < bestand ## of <<< $variable
+
 ## download "URL" "file"
 wget -qO- "URL" >"my_file.txt"
