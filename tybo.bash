@@ -65,3 +65,6 @@ calculate_woord_and_length(){
     woord=$(cut -d " " -f2 <<< $woordbreuk)
     length=$(round $(echo "scale=10;$(cut -d " " -f1 <<< $woordbreuk)*${#woord}"|bc))
 }
+
+## print line numbers before file vim
+2,$!nl -s':' -w 1
