@@ -94,3 +94,6 @@ done < bestand ## of <<< $variable
 
 ## download "URL" "file"
 wget -qO- "URL" >"my_file.txt"
+
+## print line numbers before file vim
+2,$!nl -s':' -w 1
